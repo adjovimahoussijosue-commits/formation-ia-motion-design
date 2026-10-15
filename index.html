@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta property="og:title" content="Formation IA Motion Design">
+<meta property="og:image" content="media/cover-new.webp">
+<title>Formation IA Motion Design</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Crée des pubs vidéo qui font vendre avec l'IA, sans caméra ni monteur. E-book de 158 pages, 200 prompts, communauté WhatsApp. 6 900 FCFA.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Playfair+Display:ital,wght@1,400;1,700;1,900&family=Instrument+Serif:ital@1&display=swap">
+<!-- Meta Pixel : remplace TON_PIXEL_ID ci-dessous par l'ID de ton Pixel (une seule fois). Tant que ce n'est pas fait, le Pixel reste désactivé. -->
+<script>
+var PIXEL_ID='TON_PIXEL_ID';
+if(/^\d{6,}$/.test(PIXEL_ID)){
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init',PIXEL_ID);fbq('track','PageView');fbq('track','ViewContent',{content_name:'Formation IA Motion Design',value:6900,currency:'XOF'});
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-pay]');if(a)fbq('track','InitiateCheckout',{content_name:'Formation IA Motion Design',value:6900,currency:'XOF'})});
+}
+</script>
+<style>
+/* Layout : page de vente mobile-first sur papier à grille. Sections posées comme des feuilles arrondies qui se chevauchent (délimitation nette), accents violet / noir / rouge du style motion design. Look unique assumé. */
+:root{
+  --violet:#7B22B5; --violet-deep:#56118A; --lav:#EFE5FB; --lav2:#F6F0FD;
+  --ink:#141414; --muted:#57535f; --paper:#FAFAFB; --line:#ECE6F4; --red:#E5262D; --gold:#E8B84A;
+  --display:"Playfair Display",Georgia,"Times New Roman",serif;
+  --cond:"Instrument Serif",Georgia,serif;
+  --body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:#E9E4F1;color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;letter-spacing:-.01em;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img,video{max-width:100%;display:block}
+a{color:inherit} button{font-family:var(--body)}
+/* Sections = feuilles arrondies empilées */
+.band{position:relative;overflow:hidden;background:var(--paper);border-radius:34px 34px 0 0;margin-top:-34px;box-shadow:0 -14px 40px rgba(40,10,80,.10)}
+.band.hero{margin-top:0;border-radius:0;box-shadow:none}
+.in{max-width:1080px;margin:0 auto;padding-block:76px 84px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));position:relative}
+.grid-bg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(20,20,40,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(20,20,40,.06) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,#000 30%,transparent 85%);mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,#000 30%,transparent 85%)}
+.grid-bg.lt{background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px)}
+.handle{position:absolute;top:12px;left:50%;width:44px;height:5px;margin-left:-22px;border-radius:9px;background:rgba(20,20,40,.12)}
+.dark .handle,.violet .handle{background:rgba(255,255,255,.22)}
+h1,h2{font-family:var(--display);font-style:italic;font-weight:900;line-height:1.03;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1{font-size:clamp(34px,7.4vw,70px)} h2{font-size:clamp(29px,5.6vw,52px)}
+.v{color:var(--violet)}
+.tag{display:inline-block;background:var(--violet);color:#fff;font-weight:800;font-size:12px;letter-spacing:.07em;text-transform:uppercase;padding:7px 12px;transform:rotate(-2deg)}
+.tag.w{background:#fff;color:var(--violet)}
+.lead{font-size:17px;color:var(--muted);max-width:56ch;margin:14px 0 0}
+.center{text-align:center}.center .lead{margin-inline:auto}
+.card{background:#fff;border-radius:22px;box-shadow:0 14px 36px rgba(40,10,80,.09),0 2px 6px rgba(0,0,0,.04)}
+
+/* Boutons */
+.btn{position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--violet);color:#fff;font-weight:900;font-size:18px;min-height:58px;padding:16px 26px;border-radius:18px;text-decoration:none;border:0;cursor:pointer;box-shadow:0 14px 30px rgba(123,34,181,.35);animation:glowv 2.6s ease-in-out infinite;transition:transform .2s;-webkit-tap-highlight-color:transparent}
+.btn::before{content:"";position:absolute;top:0;left:-60%;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:shine 3.2s ease-in-out infinite;z-index:-1}
+.btn:hover{transform:translateY(-2px)} .btn:active{transform:scale(.98)}
+.btn.full{width:100%;max-width:440px}
+.btn.wh{background:#fff;color:var(--violet);animation-name:glowwh}
+.btn.wh::before{background:linear-gradient(100deg,transparent,rgba(123,34,181,.18),transparent)}
+.btn .dot{width:10px;height:10px;border-radius:50%;background:#7CFFB2;animation:pulse 1.8s infinite;flex:none}
+@keyframes shine{0%,55%{left:-60%}100%{left:130%}}
+@keyframes glowv{50%{box-shadow:0 14px 40px rgba(123,34,181,.6),0 0 0 6px rgba(123,34,181,.12)}}
+@keyframes glowwh{50%{box-shadow:0 14px 40px rgba(0,0,0,.3),0 0 0 6px rgba(255,255,255,.25)}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(124,255,178,.7)}70%{box-shadow:0 0 0 10px rgba(124,255,178,0)}100%{box-shadow:0 0 0 0 rgba(124,255,178,0)}}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* Apparitions */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.js .rv.on{opacity:1;transform:none}
+@media (min-width:900px){.js .rv{filter:blur(10px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1),filter .7s cubic-bezier(.16,1,.3,1)}.js .rv.on{filter:none}}
+.js .rv.d1{transition-delay:.08s}.js .rv.d2{transition-delay:.16s}.js .rv.d3{transition-delay:.24s}
+
+/* ===== HERO (neutre) ===== */
+.hero{background:radial-gradient(120% 80% at 50% 30%,#fff 0%,var(--paper) 55%,#EEEBF3 100%)}
+.hero .in{padding-block:20px 76px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.logo-mark{width:42px;height:42px;flex:none;filter:drop-shadow(0 6px 14px rgba(123,34,181,.3))}
+.logo b{display:block;font-family:var(--display);font-style:italic;font-weight:900;font-size:21px;line-height:1;color:var(--violet)}
+.logo small{display:block;font-size:10px;font-weight:800;letter-spacing:.32em;text-transform:uppercase;margin-top:3px}
+.launch{font-size:12px;font-weight:800;color:var(--red);background:#FDECEC;padding:7px 12px;border-radius:999px;white-space:nowrap}
+.hero-g{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;margin-top:24px}
+.hero-g>div{min-width:0}
+.hero h1 em{font-style:italic;color:var(--violet)}
+.price{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;margin:20px 0 16px}
+.price b{font-size:42px;font-weight:900;letter-spacing:-.04em;white-space:nowrap}
+.price span{font-size:14px;color:var(--muted)}
+.trust{font-size:13.5px;color:var(--muted);margin-top:14px;display:flex;flex-wrap:wrap;gap:6px 16px}
+.trust span::before{content:"✓ ";color:#1DB954;font-weight:900}
+
+.stage{position:relative;height:clamp(300px,58vw,480px);perspective:1600px;display:flex;align-items:center;justify-content:center}
+.stage::before{content:"";position:absolute;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(194,24,122,.20),rgba(123,34,181,.10) 45%,transparent 70%)}
+.stage::after{content:"";position:absolute;left:22%;right:22%;bottom:8%;height:22px;border-radius:50%;background:radial-gradient(closest-side,rgba(40,10,60,.35),transparent);filter:blur(5px)}
+.orbit{position:absolute;width:min(86%,420px);aspect-ratio:1;border:2px dashed rgba(123,34,181,.25);border-radius:50%;animation:rot 40s linear infinite}
+.orbit::before,.orbit::after{content:"";position:absolute;width:14px;height:14px;border-radius:50%;background:var(--violet);top:-7px;left:50%}
+.orbit::after{background:var(--ink);top:auto;bottom:20%;left:2%;width:10px;height:10px}
+@keyframes rot{to{transform:rotate(360deg)}}
+.shift{position:relative;transform-style:preserve-3d;animation:shift 16s cubic-bezier(.65,0,.35,1) infinite}
+.book{--w:clamp(140px,34vw,240px);--h:calc(var(--w)*1.5);--d:22px;position:relative;width:var(--w);height:var(--h);transform-style:preserve-3d;animation:spin 16s cubic-bezier(.65,0,.35,1) infinite}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden}
+.back{transform:translateZ(-11px) rotateY(180deg);background:linear-gradient(135deg,#3A0C3E,#1A0620);border-radius:4px 10px 10px 4px}
+.spine{width:22px;left:-11px;transform:rotateY(-90deg);background:linear-gradient(90deg,#14041A,#5A1258 45%,#14041A);border-radius:3px}
+.edge{width:20px;left:auto;right:-10px;transform:rotateY(90deg);background:repeating-linear-gradient(90deg,#f6f2ea 0 2px,#ddd5c7 2px 3px)}
+.edge.t{width:auto;height:20px;top:-10px;left:0;right:3px;transform:rotateX(90deg);background:repeating-linear-gradient(0deg,#f6f2ea 0 2px,#ddd5c7 2px 3px)}
+.edge.b{width:auto;height:20px;top:auto;bottom:-10px;left:0;right:3px;transform:rotateX(-90deg);background:repeating-linear-gradient(0deg,#f6f2ea 0 2px,#ddd5c7 2px 3px)}
+/* pages intérieures dessinées (au lieu de captures brutes) */
+.pp{position:absolute;inset:3px 3px 3px 0;background:#FFFDF9;border-radius:0 6px 6px 0;box-shadow:inset 14px 0 18px -12px rgba(0,0,0,.35);padding:9% 9% 8% 11%;display:flex;flex-direction:column;gap:5%;color:var(--ink);font-size:calc(var(--w)*.045)}
+.pp .k{font-weight:800;font-size:.85em;letter-spacing:.12em;text-transform:uppercase;color:var(--violet)}
+.pp .t{font-family:var(--display);font-style:italic;font-weight:900;font-size:2em;line-height:1.02}
+.pp .ln{height:.45em;border-radius:4px;background:#ECE6F2}
+.pp .box{border-radius:8px;background:#1A0A26;color:#E9DDF7;padding:7%;font-size:.9em;line-height:1.35}
+.pp .box b{color:#C99BF0}
+.pp .row{display:flex;gap:6%;align-items:center;font-weight:700;font-size:.95em}
+.pp .row i{font-style:normal;font-family:var(--display);font-weight:900;color:var(--violet);font-size:1.4em;min-width:1.4em}
+.pp .ft{margin-top:auto;font-size:.75em;color:#9a93a6;display:flex;justify-content:space-between}
+.base{transform:translateZ(9px)}
+.leaf{position:absolute;inset:0;transform-style:preserve-3d;transform-origin:0 50%;transform:translateZ(10px);animation:flip1 16s cubic-bezier(.65,0,.35,1) infinite}
+.leaf .pp{backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.leaf .pp.rv2{transform:rotateY(180deg);border-radius:6px 0 0 6px;box-shadow:inset -14px 0 18px -12px rgba(0,0,0,.3);background:#F7F1FD;align-items:center;justify-content:center;text-align:center}
+.cover{position:absolute;inset:0;transform-style:preserve-3d;transform-origin:0 50%;transform:translateZ(11px);animation:flipc 16s cubic-bezier(.65,0,.35,1) infinite}
+.cover .front{background:url(media/cover-new.webp) center/cover;border-radius:3px 8px 8px 3px;box-shadow:inset 6px 0 10px -4px rgba(0,0,0,.45)}
+.cover .front::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.3) 45%,transparent 60%);background-size:250% 100%;animation:gloss 16s ease-in-out infinite}
+.cover .inside{transform:rotateY(180deg);background:linear-gradient(135deg,#5A1258,#2A0A2E);border-radius:8px 3px 3px 8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#F6B5E0;text-align:center;padding:14px}
+.cover .inside svg{width:44%}
+.cover .inside b{font-family:var(--display);font-style:italic;font-size:calc(var(--w)*.07);color:#fff;line-height:1.2}
+@keyframes spin{0%{transform:rotateX(8deg) rotateY(-32deg)}14%{transform:rotateX(4deg) rotateY(-12deg)}24%,74%{transform:rotateX(12deg) rotateY(0)}86%{transform:rotateX(6deg) rotateY(-20deg)}100%{transform:rotateX(8deg) rotateY(-32deg)}}
+@keyframes shift{0%,18%{transform:translateX(0)}26%,72%{transform:translateX(calc(var(--sw,200px)/2))}80%,100%{transform:translateX(0)}}
+@keyframes flipc{0%,18%{transform:translateZ(11px) rotateY(0)}28%,68%{transform:translateZ(11px) rotateY(-168deg)}78%,100%{transform:translateZ(11px) rotateY(0)}}
+@keyframes flip1{0%,36%{transform:translateZ(10px) rotateY(0)}46%,58%{transform:translateZ(10px) rotateY(-164deg)}66%,100%{transform:translateZ(10px) rotateY(0)}}
+@keyframes gloss{0%,10%{background-position:120% 0}18%,100%{background-position:-20% 0}}
+.sl-cap{text-align:center;font-size:13px;font-weight:800;color:var(--violet);min-height:20px;margin-top:4px;letter-spacing:.02em}
+.facts{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:12px}
+.facts span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 12px;font-size:13px;font-weight:800;box-shadow:0 6px 16px rgba(60,20,120,.06)}
+
+/* ===== FEUILLETER (motion) ===== */
+.flipzone{background:linear-gradient(180deg,#F7F2FD,#EEE3FB)}
+.coverflow{position:relative;height:clamp(300px,64vw,420px);perspective:1100px;margin-top:30px}
+.cf{position:absolute;left:50%;top:50%;width:clamp(150px,36vw,230px);aspect-ratio:7/10;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.65,0,.35,1),opacity .9s,filter .9s}
+.cf .pgimg{position:absolute;inset:0;border-radius:10px;background:#fff center/cover;box-shadow:0 26px 50px rgba(40,10,80,.25);overflow:hidden}
+.cf .pgimg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,0) 30%,rgba(26,10,38,.86) 100%);backdrop-filter:blur(1.4px);-webkit-backdrop-filter:blur(1.4px)}
+.cf .lbl{position:absolute;left:10px;right:10px;bottom:12px;color:#fff;z-index:2}
+.cf .lbl small{display:block;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#D9B8F5}
+.cf .lbl b{display:block;font-family:var(--display);font-style:italic;font-weight:900;font-size:clamp(15px,3.6vw,20px);line-height:1.1}
+.cf-dots{display:flex;justify-content:center;gap:7px;margin-top:8px}
+.cf-dots i{width:8px;height:8px;border-radius:9px;background:#D5C6EA;transition:width .4s,background .4s}
+.cf-dots i.on{width:24px;background:var(--violet)}
+
+/* ===== PROBLEME ===== */
+.dark{background:radial-gradient(90% 60% at 50% 45%,#171717 0%,#060606 70%,#000 100%);color:#fff;text-align:center}
+.dark .lead{color:#b9b6c2}
+.strikes{margin:30px 0;display:grid;gap:4px;justify-items:center}
+.strk{position:relative;font-weight:900;font-size:clamp(32px,7vw,60px);letter-spacing:-.035em;line-height:1.15}
+.strk::after{content:"";position:absolute;left:-4%;top:52%;height:6px;width:108%;background:var(--red);border-radius:6px;box-shadow:0 0 18px rgba(229,38,45,.9);transform:rotate(-3deg) scaleX(0);transform-origin:0 50%;transition:transform .45s cubic-bezier(.16,1,.3,1)}
+.strk.on::after,.nojs .strk::after{transform:rotate(-3deg) scaleX(1)}
+.glow{color:var(--red);text-shadow:0 0 24px rgba(229,38,45,.7)}
+
+/* ===== VIDEOS : grille 2 colonnes sur mobile ===== */
+.vgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:28px}
+.vcard{position:relative;width:100%;aspect-ratio:9/16;border-radius:20px;overflow:hidden;background:#111;box-shadow:0 16px 36px rgba(40,10,80,.18);border:0;padding:0;cursor:pointer;color:#fff;text-align:left}
+.vcard video{width:100%;height:100%;object-fit:cover;pointer-events:none}
+.vcard .pl{position:absolute;left:50%;top:44%;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--violet);display:flex;align-items:center;justify-content:center;font-size:19px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.vcard .pl::after{content:"";position:absolute;inset:-8px;border-radius:50%;border:2px solid rgba(255,255,255,.7);animation:ring 1.8s ease-out infinite}
+@keyframes ring{from{transform:scale(.8);opacity:1}to{transform:scale(1.35);opacity:0}}
+.vcard .cap{position:absolute;left:8px;right:8px;bottom:8px;background:rgba(14,10,22,.8);font-size:12.5px;font-weight:700;padding:8px 10px;border-radius:11px;line-height:1.25}
+.vcard .cap small{display:block;font-weight:500;opacity:.8;font-size:11.5px}
+.tap{display:inline-flex;align-items:center;gap:8px;background:var(--lav);color:var(--violet);font-weight:800;font-size:14px;padding:9px 14px;border-radius:999px;margin-top:14px}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(8,4,14,.95);display:flex;align-items:center;justify-content:center;padding:calc(60px + env(safe-area-inset-top,0px)) 12px calc(80px + env(safe-area-inset-bottom,0px))}
+.lb video{max-height:100%;max-width:min(100%,560px);width:auto;height:auto;border-radius:18px;background:#000}
+.lb .x{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:max(12px,env(safe-area-inset-right,0px));width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.15);color:#fff;font-size:22px;cursor:pointer}
+.lb .nav{position:absolute;bottom:calc(14px + env(safe-area-inset-bottom,0px));left:0;right:0;display:flex;justify-content:center;gap:12px;align-items:center}
+.lb .nav button{width:50px;height:50px;border-radius:50%;border:0;background:rgba(255,255,255,.15);color:#fff;font-size:20px;cursor:pointer}
+.lb .nav .btn{min-height:50px;padding:0 20px;font-size:15px}
+
+/* ===== BANDE NICHES ===== */
+.marquee{position:relative;z-index:2;background:var(--violet);color:#fff;overflow:hidden;padding:14px 0;margin-top:-34px;border-radius:34px 34px 0 0}
+.marquee + .band{margin-top:0;border-radius:0}
+.mq{display:flex;gap:30px;width:max-content;animation:mq 40s linear infinite;font-family:var(--cond);font-style:italic;font-size:26px;text-transform:uppercase;white-space:nowrap;padding-top:6px}
+.mq span::after{content:"✦";margin-left:30px;font-family:var(--body);font-style:normal;font-size:14px;opacity:.7}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ===== PROGRAMME ===== */
+.lav{background:linear-gradient(180deg,#F7F2FD 0%,#EADCFA 60%,#DCC6F6 100%)}
+.prog{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.mod{display:flex;gap:14px;padding:18px 20px;align-items:flex-start}
+.mod>div{min-width:0}
+.mod .n{font-family:var(--display);font-style:italic;font-weight:900;font-size:30px;color:var(--violet);line-height:1;min-width:40px}
+.mod b{display:block;font-size:17.5px;letter-spacing:-.02em}
+.mod span{font-size:14.5px;color:var(--muted)}
+
+/* ===== OFFRE ===== */
+.violet{background:radial-gradient(110% 80% at 50% 30%,#8A2BC7 0%,var(--violet) 50%,var(--violet-deep) 100%);color:#fff}
+.offer{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:28px}
+.it{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:18px;min-width:0}
+.it b{font-size:17px;display:block;letter-spacing:-.02em}
+.it p{margin:6px 0 0;font-size:14px;opacity:.9}
+.it .ic{font-size:22px;margin-bottom:6px;display:block}
+.total{margin-top:20px;background:#fff;color:var(--ink);border-radius:22px;padding:22px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+.total small{display:block;color:var(--muted);font-size:13.5px}
+.total b{font-size:36px;font-weight:900;letter-spacing:-.04em;white-space:nowrap}
+
+/* ===== 7 JOURS : grille 2 colonnes ===== */
+.days{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:28px}
+.day{padding:18px;min-width:0}
+.day .d{font-family:var(--cond);font-style:italic;font-size:26px;color:var(--violet);text-transform:uppercase;line-height:1}
+.day .t{display:inline-block;margin-top:6px;font-size:11.5px;font-weight:800;background:var(--lav);color:var(--violet);padding:3px 9px;border-radius:999px}
+.day p{margin:8px 0 0;font-size:14.5px;color:#333}
+.day.cta{background:var(--ink);color:#fff;display:flex;flex-direction:column;justify-content:space-between;gap:12px;text-decoration:none}
+.day.cta .d{color:#fff}.day.cta p{color:#cfc9d8}
+.day.cta span.go{font-weight:900;color:#C99BF0}
+
+/* ===== AVIS (affichés seulement quand la liste est remplie) ===== */
+.stats{display:flex;justify-content:center;gap:26px;flex-wrap:wrap;margin-top:22px}
+.stats div{text-align:center}.stats b{display:block;font-size:34px;font-weight:900;letter-spacing:-.04em;color:var(--violet)}.stats small{color:var(--muted);font-size:13px}
+.rev-wrap{overflow:hidden;padding:26px 0 86px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.rev-track{display:flex;gap:14px;width:max-content;animation:mq 70s linear infinite}
+.rev-track.r2{animation-direction:reverse;margin-top:14px}
+.rev-wrap:hover .rev-track{animation-play-state:paused}
+.rev{width:290px;padding:18px;flex:none}
+.rev .stars{color:#F5B400;letter-spacing:2px}
+.rev p{margin:8px 0 12px;font-size:14.5px}
+.rev .who{display:flex;gap:10px;align-items:center}
+.rev .av{width:40px;height:40px;border-radius:50%;object-fit:cover;background:var(--lav);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--violet)}
+.rev small{color:var(--muted)}
+
+/* ===== AVIS : cartes éparpillées + rangées qui défilent (motion design) ===== */
+#avis{overflow:hidden;padding-bottom:70px}
+.avis-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.avis-t{font-family:var(--body);font-style:normal;font-weight:900;text-transform:uppercase;letter-spacing:-.03em;font-size:clamp(32px,6.4vw,58px);line-height:1}
+.avis-t .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.avis-t .w{display:inline-block}.avis-t .v{color:var(--violet)}
+.js .avis-t .w{transform:translateY(105%) rotate(6deg);transition:transform .8s cubic-bezier(.2,1.2,.3,1)}
+.js #avis.go .avis-t .w{transform:none}
+.avis-score{background:#fff;border-radius:16px;padding:12px 16px;box-shadow:0 12px 30px rgba(40,10,80,.10);display:grid;grid-template-columns:auto auto;align-items:center;gap:0 10px}
+.avis-score b{font-size:34px;font-weight:900;line-height:1;grid-row:span 2}
+.avis-score .sc-st{color:var(--violet);letter-spacing:2px;font-size:15px}
+.avis-score small{color:var(--muted);font-size:12px;font-weight:600}
+.js .avis-score{opacity:0;transform:scale(.6) rotate(-6deg);transition:opacity .4s,transform .7s cubic-bezier(.2,1.6,.4,1) .5s}
+.js #avis.go .avis-score{opacity:1;transform:none}
+.wall{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 20px;margin-top:36px;max-width:920px}
+.rc{position:relative;margin:0;background:#fff;border-radius:6px;padding:20px 18px 18px;box-shadow:0 18px 40px rgba(20,10,40,.14),0 2px 6px rgba(0,0,0,.06);min-width:0;transform:rotate(var(--r,0deg)) translateY(var(--y,0))}
+.rc .st{color:var(--violet);font-size:17px;letter-spacing:3px;display:flex;gap:2px}
+.rc .st i{font-style:normal;display:inline-block}
+.rc q{display:block;margin:12px 0 14px;font-size:14px;line-height:1.5;color:#222;font-weight:600;quotes:"“" "”"}
+.rc hr{border:0;border-top:1px solid #ddd;width:60%;margin:0 0 10px}
+.rc b{font-size:13.5px;display:flex;align-items:center;gap:8px}
+.rc b::before{content:attr(data-i);width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:11px;color:#fff;background:linear-gradient(135deg,#9B3FE0,#4A0E7A);flex:none}
+.wall .rc{transition:transform .35s}
+.wall .rc:hover{transform:rotate(0) translateY(-4px) scale(1.03);z-index:3}
+.js .wall .rc{opacity:0;transform:rotate(calc(var(--r,0deg)*5)) translateY(-90px) scale(1.15);transition:opacity .25s,transform .75s cubic-bezier(.2,1.5,.35,1)}
+.js .wall .rc.on{opacity:1;transform:rotate(var(--r,0deg)) translateY(var(--y,0))}
+.js .rc .st i{opacity:.15;transform:scale(.3)}
+.rc.on .st i{opacity:1;transform:none;transition:opacity .25s,transform .45s cubic-bezier(.2,1.8,.4,1)}
+.wall .rc.on{animation:drift 7s ease-in-out infinite;animation-delay:var(--dl,0s)}
+@keyframes drift{50%{translate:0 -6px}}
+/* rangées */
+.rows{margin-top:40px;display:grid;gap:18px;-webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.row{overflow:hidden;padding:14px 0}
+.track{display:flex;gap:18px;width:max-content;animation:mq 70s linear infinite}
+.row.avrev .track{animation-direction:reverse;animation-duration:80s}
+.row:hover .track{animation-play-state:paused}
+.track .rc{width:270px;flex:none;padding:16px 16px 14px}
+.track .rc:nth-child(odd){--r:-2deg}.track .rc:nth-child(even){--r:2deg;--y:8px}
+.track .rc q{font-size:13px}
+.js .rows{opacity:0;transform:translateY(40px);transition:opacity .8s,transform .9s cubic-bezier(.2,1,.3,1)}
+.js .rows.go{opacity:1;transform:none}
+@media (max-width:860px){.wall{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 12px}.wall .rc{padding:15px 12px}.rc q{font-size:13px}.rc .st{font-size:14px;letter-spacing:1px}.track .rc{width:220px}.rc b::before{width:22px;height:22px;font-size:10px}.avis-score b{font-size:28px}}
+@media (prefers-reduced-motion:reduce){.track,.wall .rc.on{animation:none}}
+/* ===== FAQ ===== */
+.faq{display:grid;gap:10px;margin-top:26px;max-width:780px;margin-inline:auto;text-align:left}
+details{background:#fff;border-radius:18px;box-shadow:0 8px 24px rgba(40,10,80,.07)}
+summary{list-style:none;cursor:pointer;padding:16px 20px;font-weight:800;font-size:16px;display:flex;justify-content:space-between;gap:14px;letter-spacing:-.02em;min-height:56px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--violet);font-size:24px;line-height:1;transition:transform .25s;flex:none}
+details[open] summary::after{transform:rotate(45deg)}
+details p,details .ans{margin:0;padding:0 20px 18px;color:var(--muted);font-size:15px}
+.mm{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 4px}
+.mm span{padding:7px 10px;border-radius:10px;font-weight:900;font-size:12.5px;color:#fff}
+.num{font-weight:900;color:var(--ink);user-select:all;white-space:nowrap}
+.copy{border:1px solid #ddd6ea;background:#fff;border-radius:10px;padding:7px 12px;font-weight:800;cursor:pointer;font-size:13px;margin-left:6px}
+
+/* ===== FINAL / STICKY ===== */
+.final{text-align:center}
+.final .lead{color:#eadcff}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(255,255,255,.96);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));display:flex;align-items:center;justify-content:space-between;gap:12px;transform:translateY(110%);transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.sticky.show{transform:none}
+.sticky small{display:block;font-size:12px;color:var(--muted)}
+.sticky b{font-size:20px;font-weight:900;letter-spacing:-.03em;white-space:nowrap}
+.sticky .btn{min-height:50px;padding:12px 20px;font-size:16px}
+footer{background:#0b0614;color:#a59db3;text-align:center;font-size:13px;border-radius:34px 34px 0 0;margin-top:-34px;position:relative}
+footer .in{padding-block:40px calc(96px + env(safe-area-inset-bottom,0px))}
+
+@media (max-width:860px){
+  .hero-g{grid-template-columns:1fr;gap:4px}
+  .hero-copy{text-align:center}
+  .hero .lead{margin-inline:auto}
+  .price,.trust{justify-content:center}
+  .hero .btn.full{margin-inline:auto}
+  .prog,.offer{grid-template-columns:1fr}
+  .offer{grid-template-columns:1fr 1fr}
+  .vgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .days{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .day{padding:14px}.day p{font-size:13.5px}
+  .in{padding-block:60px 74px}
+  .vcard .cap{font-size:11.5px;padding:7px 8px}.vcard .cap small{font-size:10.5px}
+}
+@media (max-width:380px){.offer{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){
+  .js .rv{opacity:1;transform:none;filter:none;transition:none}
+  .btn,.btn::before,.btn .dot,.shift,.book,.cover,.leaf,.cover .front::after,.orbit,.mq,.rev-track,.vcard .pl::after{animation:none!important}
+  .book{transform:rotateX(8deg) rotateY(-24deg)}
+}
+</style>
+</head><body>
+
+<header class="band hero" id="top">
+ <div class="grid-bg"></div>
+ <div class="in">
+  <div class="top">
+   <a class="logo" href="#top" aria-label="JosDigital Academy"><svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9B3FE0"/><stop offset="1" stop-color="#4A0E7A"/></linearGradient></defs><rect width="64" height="64" rx="18" fill="url(#lg1)"/><path d="M38 14h-9.5v4.2h4.4V39c0 5-2.6 7.6-6.6 7.6-2.2 0-4-.7-5.4-1.9l-2.3 3.7c2 1.8 4.9 2.8 8.2 2.8 6.9 0 11.2-4.3 11.2-12V14z" fill="#fff"/><path d="M43 38l9 5.5-9 5.5z" fill="#E5262D"/><path d="M47 12l1.6 3.6L52 17l-3.4 1.4L47 22l-1.6-3.6L42 17l3.4-1.4z" fill="#F5D36B"/></svg><span><b>JosDigital</b><small>Academy</small></span></a>
+   <span class="launch">● Prix de lancement</span>
+  </div>
+  <div class="hero-g">
+   <div>
+    <div class="stage" id="stage" aria-label="Animation 3D de l'e-book qui s'ouvre">
+     <div class="orbit"></div>
+     <div class="shift" id="shift"><div class="book" id="book">
+      <div class="face back"></div><div class="face spine"></div>
+      <div class="face edge"></div><div class="face edge t"></div><div class="face edge b"></div>
+      <div class="pp base"><span class="k">Chapitre 7</span><span class="t">Ta première vidéo en motion design</span><div class="box"><b>✦ Prompt</b><br>Crée une vidéo verticale de 15 s pour ma promo…</div><span class="ln"></span><span class="ln" style="width:80%"></span><span class="ln" style="width:60%"></span><span class="ft"><span>JosDigital Academy</span><span>23</span></span></div>
+      <div class="leaf"><div class="pp"><span class="k">Sommaire</span><div class="row"><i>1</i>Avant de commencer</div><div class="row"><i>2</i>Le motion design avec Claude</div><div class="row"><i>3</i>Google Flow et Veo</div><div class="row"><i>4</i>Le premium sans se ruiner</div><div class="row"><i>5</i>Les prompts comme un pro</div><div class="row"><i>6</i>200 prompts par niche</div><span class="ft"><span>Guide pratique</span><span>3</span></span></div><div class="pp rv2"><span class="t" style="color:var(--violet)">200</span><span class="k">prompts prêts à l'emploi</span></div></div>
+      <div class="cover"><div class="face front" role="img" aria-label="Couverture : Transforme tes produits avec l'IA"></div><div class="face inside"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#7B22B5"/><path d="M38 14h-9.5v4.2h4.4V39c0 5-2.6 7.6-6.6 7.6-2.2 0-4-.7-5.4-1.9l-2.3 3.7c2 1.8 4.9 2.8 8.2 2.8 6.9 0 11.2-4.3 11.2-12V14z" fill="#fff"/><path d="M43 38l9 5.5-9 5.5z" fill="#E5262D"/></svg><b>JosDigital Academy</b></div></div>
+     </div></div>
+    </div>
+    <div class="sl-cap" id="slcap">La couverture</div>
+    <div class="facts"><span>📘 158 pages</span><span>✦ 200 prompts</span><span>▶ Pas à pas</span></div>
+   </div>
+   <div class="hero-copy">
+    <h1 style="margin-top:22px">Transforme tes produits en <em>pubs vidéo</em> avec l'IA.</h1>
+    <p class="lead">Sans caméra, sans studio, sans monteur. Le guide pas à pas, 200 prompts prêts à l'emploi et une communauté pour avancer.</p>
+    <div class="price"><b>6 900 FCFA</b><span>une seule fois · accès immédiat</span></div>
+    <a class="btn full" href="https://josdigital.mymaketou.shop/products/acces-premium-capcut-pro-sur-android/checkout" target="_blank" rel="noopener" data-pay><span class="dot"></span>Je rejoins la formation</a>
+    <div class="trust"><span>Mobile Money, Wave ou carte</span><span>E-book reçu tout de suite</span></div>
+   </div>
+  </div>
+ </div>
+</header>
+
+<section class="band flipzone" id="feuilleter">
+ <div class="handle"></div>
+ <div class="in center">
+  <span class="tag rv">À l'intérieur du guide</span>
+  <h2 class="rv d1" style="margin-top:16px">Feuillette le guide, <span class="v">page après page.</span></h2>
+  <div class="coverflow" id="cflow" aria-label="Aperçu des pages du guide">
+   <div class="cf"><div class="pgimg" style="background-image:url(media/pg-9.webp)"></div><div class="lbl"><small>Chapitre 1</small><b>Ce que l'IA peut faire pour ton commerce</b></div></div>
+   <div class="cf"><div class="pgimg" style="background-image:url(media/pg-15.webp)"></div><div class="lbl"><small>Chapitre 4</small><b>Créer ton compte Claude</b></div></div>
+   <div class="cf"><div class="pgimg" style="background-image:url(media/pg-23.webp)"></div><div class="lbl"><small>Chapitre 7</small><b>Ta première vidéo en motion design</b></div></div>
+   <div class="cf"><div class="pgimg" style="background-image:url(media/pg-39.webp)"></div><div class="lbl"><small>Chapitre 13</small><b>Une affiche à partir de ta photo</b></div></div>
+   <div class="cf"><div class="pgimg" style="background-image:url(media/pg-56.webp)"></div><div class="lbl"><small>Chapitre 21</small><b>Anatomie d'un bon prompt</b></div></div>
+   <div class="cf"><div class="pgimg" style="background-image:url(media/pg-61.webp)"></div><div class="lbl"><small>Niche 1</small><b>Crèmes, laits et pommades</b></div></div>
+   <div class="cf"><div class="pgimg" style="background-image:url(media/pg-92.webp)"></div><div class="lbl"><small>Niche 8</small><b>Chaussures et sneakers</b></div></div>
+   <div class="cf"><div class="pgimg" style="background-image:url(media/pg-144.webp)"></div><div class="lbl"><small>Bonus</small><b>20 prompts motion design</b></div></div>
+  </div>
+  <div class="cf-dots" id="cfdots"></div>
+ </div>
+</section>
+
+<section class="band dark" id="probleme">
+ <div class="handle"></div>
+ <div class="grid-bg lt"></div>
+ <div class="in">
+  <p class="lead rv" style="margin-inline:auto">Tu vends un produit, un service ou une appli, mais tes pubs ne font pas vendre ?</p>
+  <div class="strikes"><span class="strk">Pas de caméra.</span><span class="strk">Pas de studio.</span><span class="strk">Pas de monteur.</span></div>
+  <h2 class="rv">Juste <span class="glow">l'IA</span>, et la bonne méthode.</h2>
+ </div>
+</section>
+
+<section class="band" id="videos">
+ <div class="handle"></div>
+ <div class="grid-bg"></div>
+ <div class="in center">
+  <span class="tag rv">Créées avec l'IA</span>
+  <h2 class="rv d1" style="margin-top:16px">Regarde ces vidéos que nous avons <span class="v">générées avec l'IA.</span></h2>
+  <div class="tap rv d2">👆 Touche une vidéo pour la voir en grand, avec le son</div>
+  <div class="vgrid">
+   <button class="vcard rv" type="button"><video data-src="media/pub-formation.mp4" poster="media/pub-formation.jpg" muted loop playsinline preload="none"></video><span class="pl">▶</span><span class="cap">Pub de la formation<small>70 s</small></span></button>
+   <button class="vcard rv d1" type="button"><video data-src="media/pub-studio.mp4" poster="media/pub-studio.jpg" muted loop playsinline preload="none"></video><span class="pl">▶</span><span class="cap">Pub produit<small>60 s</small></span></button>
+   <button class="vcard rv" type="button"><video data-src="media/demo-style.mp4" poster="media/demo-style.jpg" muted loop playsinline preload="none"></video><span class="pl">▶</span><span class="cap">Démo de style<small>12 s</small></span></button>
+   <button class="vcard rv d1" type="button"><video data-src="media/presentation.mp4" poster="media/presentation.jpg" muted loop playsinline preload="none"></video><span class="pl">▶</span><span class="cap">La méthode<small>93 s</small></span></button>
+  </div>
+ </div>
+</section>
+
+
+<section class="band" id="avis">
+ <div class="handle"></div>
+ <div class="grid-bg"></div>
+ <div class="in">
+  <div class="avis-head">
+   <h2 class="avis-t"><span class="ln"><span class="w">Nos</span> <span class="w v">élèves</span></span><span class="ln"><span class="w">parlent</span> <span class="w">du</span> <span class="w">guide</span></span></h2>
+   <div class="avis-score"><b id="avisNote">0,0</b><span class="sc-st">★★★★★</span><small><span id="avisNb">0</span> avis vérifiés</small></div>
+  </div>
+  <div class="wall" id="wall"></div>
+ </div>
+ <div class="rows" id="rows"><div class="row"><div class="track" id="rowA"></div></div><div class="row avrev"><div class="track" id="rowB"></div></div></div>
+</section>
+
+<div class="marquee" aria-label="Les 20 niches couvertes par les prompts"><div class="mq" id="mq"><span>Cosmétique</span><span>Pagne wax</span><span>Sneakers</span><span>Parfums</span><span>Perruques</span><span>Bijoux</span><span>Restauration</span><span>Karité &amp; miel</span><span>Téléphones</span><span>Électroménager</span><span>Déco</span><span>Bébés</span><span>Boissons</span><span>Sport</span><span>Auto &amp; moto</span><span>BTP</span><span>Maroquinerie</span><span>Mode homme</span><span>Bien-être</span><span>Sérums</span></div></div>
+
+<section class="band lav" id="programme">
+ <div class="in">
+  <span class="tag rv">Le programme</span>
+  <h2 class="rv d1" style="margin-top:16px">De la photo de ton produit <span class="v">à la pub finie.</span></h2>
+  <div class="prog">
+   <div class="card mod rv"><div class="n">01</div><div><b>Avant de commencer</b><span>Ce que l'IA peut faire pour ton commerce, et bien photographier ton produit.</span></div></div>
+   <div class="card mod rv d1"><div class="n">02</div><div><b>Le motion design avec Claude</b><span>Ta première vidéo animée avec voix off, sans rien monter toi-même.</span></div></div>
+   <div class="card mod rv"><div class="n">03</div><div><b>Google Flow et Veo</b><span>Affiches et vidéos ultra réalistes à partir de la photo de ton produit.</span></div></div>
+   <div class="card mod rv d1"><div class="n">04</div><div><b>Le premium sans se ruiner</b><span>Gérer tes crédits pour produire beaucoup de vidéos chaque mois.</span></div></div>
+   <div class="card mod rv"><div class="n">05</div><div><b>Les prompts comme un pro</b><span>Adapter n'importe quel prompt à ton produit en 30 secondes.</span></div></div>
+   <div class="card mod rv d1"><div class="n">06</div><div><b>200 prompts par niche</b><span>20 secteurs, 20 prompts motion design bonus, et un plan pour en faire un service.</span></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="band violet" id="offre">
+ <div class="handle"></div>
+ <div class="grid-bg lt"></div>
+ <div class="in">
+  <span class="tag w rv">Tout ce que tu reçois</span>
+  <h2 class="rv d1" style="margin-top:16px">Pour 6 900 FCFA, tu repars avec tout ça.</h2>
+  <div class="offer">
+   <div class="it rv"><span class="ic">📘</span><b>L'e-book de 158 pages</b><p>22 chapitres avec captures d'écran.</p></div>
+   <div class="it rv d1"><span class="ic">✦</span><b>200 prompts</b><p>20 niches, prêts à copier.</p></div>
+   <div class="it rv"><span class="ic">💬</span><b>Communauté WhatsApp</b><p>Pour poser tes questions.</p></div>
+   <div class="it rv d1"><span class="ic">🎥</span><b>Lives pratiques</b><p>On crée ensemble, en direct.</p></div>
+  </div>
+  <div class="total rv"><div><small>Accès complet, une seule fois</small><b>6 900 FCFA</b></div><a class="btn" href="https://josdigital.mymaketou.shop/products/acces-premium-capcut-pro-sur-android/checkout" target="_blank" rel="noopener" data-pay>Je rejoins maintenant →</a></div>
+ </div>
+</section>
+
+<section class="band" id="plan">
+ <div class="handle"></div>
+ <div class="grid-bg"></div>
+ <div class="in center">
+  <span class="tag rv">Ton plan sur 7 jours</span>
+  <h2 class="rv d1" style="margin-top:16px">Dans une semaine, <span class="v">ta première pub est en ligne.</span></h2>
+  <div class="days" style="text-align:left">
+   <div class="card day rv"><div class="d">Jour 1</div><span class="t">1 h</span><p>Tu photographies tes 3 meilleurs produits et tu crées tes comptes.</p></div>
+   <div class="card day rv d1"><div class="d">Jour 2</div><span class="t">1 h</span><p>Tu crées 3 affiches par produit dans Google Flow.</p></div>
+   <div class="card day rv"><div class="d">Jour 3</div><span class="t">45 min</span><p>Tu transformes ta meilleure affiche en vidéo de 8 s.</p></div>
+   <div class="card day rv d1"><div class="d">Jour 4</div><span class="t">1 h</span><p>Ta première vidéo en motion design avec Claude.</p></div>
+   <div class="card day rv"><div class="d">Jour 5</div><span class="t">1 h</span><p>Tu ajoutes la voix off et tu assembles ta pub.</p></div>
+   <div class="card day rv d1"><div class="d">Jour 6</div><span class="t">30 min</span><p>Tu publies sur WhatsApp, Facebook et TikTok.</p></div>
+   <div class="card day rv"><div class="d">Jour 7</div><span class="t">1 h</span><p>Tu crées deux variantes de ta meilleure pub.</p></div>
+   <a class="card day cta rv d1" href="https://josdigital.mymaketou.shop/products/acces-premium-capcut-pro-sur-android/checkout" target="_blank" rel="noopener" data-pay><div class="d">Jour 0</div><p>Tout commence ici : tu rejoins la formation.</p><span class="go">Je commence →</span></a>
+  </div>
+ </div>
+</section>
+
+
+
+<section class="band" id="faq" style="background:linear-gradient(180deg,#fff,#F3EBFC)">
+ <div class="handle"></div>
+ <div class="in center">
+  <span class="tag rv">Questions fréquentes</span>
+  <h2 class="rv d1" style="margin-top:16px">Tu te poses une question ?</h2>
+  <div class="faq">
+   <details><summary>Comment je paie ?</summary><div class="ans">Tu cliques sur « Je rejoins », tu choisis ton pays, puis tu paies 6 900 FCFA par Mobile Money, Wave ou carte bancaire sur la page de paiement sécurisée.<div class="mm"><span style="background:#FFCC00;color:#111">MTN MoMo</span><span style="background:#0066B3">Moov Money</span><span style="background:#FF7900">Orange Money</span><span style="background:#13A9D8">Wave</span><span style="background:#CD1E25">Free Money</span><span style="background:#1A1F71">Visa / Mastercard</span></div></div></details>
+   <details><summary>Comment je reçois la formation ?</summary><p>Dès que ton paiement est confirmé, tu reçois l'e-book en PDF (158 pages) et le lien pour rejoindre la communauté WhatsApp. Tu le gardes à vie et tu avances à ton rythme.</p></details>
+   <details><summary>Je ne connais rien au montage, c'est pour moi ?</summary><p>Oui. Le guide part de zéro. Pour le motion design, tu décris ce que tu veux et l'IA monte la vidéo à ta place. Chaque étape est montrée avec des captures d'écran.</p></details>
+   <details><summary>Je peux tout faire sur mon téléphone ?</summary><p>Tu peux suivre la formation et faire une grande partie du travail sur téléphone. Pour Google Flow, un ordinateur est conseillé, car l'expérience est plus limitée sur mobile. Le guide te montre les deux.</p></details>
+   <details><summary>Les outils sont-ils payants ?</summary><p>Tu peux commencer gratuitement : Google Flow, Claude, HeyGen et ElevenLabs ont une version gratuite. Le guide présente trois parcours selon ton budget, dont un à zéro franc.</p></details>
+   <details><summary>Je peux payer depuis quel pays ?</summary><p>Depuis le Bénin, le Togo, la Côte d'Ivoire, le Sénégal, le Cameroun, le Burkina Faso, le Mali et les autres pays d'Afrique francophone, par Mobile Money ou Wave selon ce qui existe chez toi, ou partout par carte.</p></details>
+   <details><summary>Et si je bloque ou j'ai une question ?</summary><div class="ans">Le guide a un chapitre sur les blocages fréquents, et tu poses tes questions dans la communauté WhatsApp. Avant d'acheter, écris-moi au <span class="num" id="num">+229 96 77 25 99</span><button class="copy" id="copy" type="button">Copier</button></div></details>
+  </div>
+ </div>
+</section>
+
+<section class="band violet final" id="final">
+ <div class="handle"></div>
+ <div class="grid-bg lt"></div>
+ <div class="in">
+  <img src="media/cover-new.webp" alt="" loading="lazy" style="width:140px;margin:0 auto 22px;border-radius:6px;box-shadow:0 24px 50px rgba(0,0,0,.45);transform:rotate(-4deg)">
+  <h2 class="rv">Ton prochain produit mérite une vraie mise en scène.</h2>
+  <p class="lead rv d1">6 900 FCFA · e-book · 200 prompts · communauté WhatsApp</p>
+  <div style="margin-top:24px" class="rv d2"><a class="btn wh full" href="https://josdigital.mymaketou.shop/products/acces-premium-capcut-pro-sur-android/checkout" target="_blank" rel="noopener" data-pay>Je rejoins la formation →</a></div>
+ </div>
+</section>
+
+<footer><div class="in">© JosDigital Academy · Formation IA Motion Design</div></footer>
+
+<div class="sticky" id="sticky" aria-hidden="true"><div><small>Formation IA Motion Design</small><b>6 900 FCFA</b></div><a class="btn" href="https://josdigital.mymaketou.shop/products/acces-premium-capcut-pro-sur-android/checkout" target="_blank" rel="noopener" data-pay tabindex="-1">Je rejoins →</a></div>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Lecteur vidéo">
+ <button class="x" id="lbx" type="button" aria-label="Fermer">✕</button>
+ <video id="lbv" playsinline controls preload="auto"></video>
+ <div class="nav"><button type="button" id="lbp" aria-label="Précédente">←</button><a class="btn" href="https://josdigital.mymaketou.shop/products/acces-premium-capcut-pro-sur-android/checkout" target="_blank" rel="noopener" data-pay>Je rejoins</a><button type="button" id="lbn" aria-label="Suivante">→</button></div>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasIO='IntersectionObserver' in window;
+
+  if(hasIO&&!reduce){
+    root.classList.add('js');
+    var els=[].slice.call(document.querySelectorAll('.rv'));
+    requestAnimationFrame(function(){els.forEach(function(e){if(e.getBoundingClientRect().top<innerHeight*.95)e.classList.add('on')})});
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -5% 0px'});
+    els.forEach(function(e){io.observe(e)});
+    setTimeout(function(){els.forEach(function(e){e.classList.add('on')})},4000);
+    var st=[].slice.call(document.querySelectorAll('.strk'));
+    var io2=new IntersectionObserver(function(en){if(en[0].isIntersecting){st.forEach(function(s,i){setTimeout(function(){s.classList.add('on')},300+i*400)});io2.disconnect()}},{threshold:.4});
+    io2.observe(document.querySelector('.strikes'));
+  } else root.classList.add('nojs');
+
+  /* Livre 3D */
+  var book=document.getElementById('book'),shift=document.getElementById('shift'),cap=document.getElementById('slcap');
+  function setW(){shift.style.setProperty('--sw',book.offsetWidth+'px')} setW(); addEventListener('resize',setW);
+  var t0=performance.now(),caps=[[0,'La couverture'],[.2,'Le guide s\'ouvre…'],[.32,'6 parties, 22 chapitres'],[.47,'Des prompts prêts à copier'],[.66,'Transforme tes produits avec l\'IA']];
+  if(!reduce)setInterval(function(){var p=((performance.now()-t0)/16000)%1,c=caps[0][1];caps.forEach(function(k){if(p>=k[0])c=k[1]});if(cap.textContent!==c)cap.textContent=c},250);
+  else cap.textContent='Transforme tes produits avec l\'IA';
+  var stage=document.getElementById('stage');
+  if(hasIO){var anims=[].slice.call(document.querySelectorAll('.shift,.book,.cover,.leaf,.cover .front'));
+    new IntersectionObserver(function(en){var on=en[0].isIntersecting;anims.forEach(function(a){a.style.animationPlayState=on?'running':'paused'})}).observe(stage);}
+
+  /* Feuilleter : carrousel 3D automatique */
+  var cfs=[].slice.call(document.querySelectorAll('.cf')),dots=document.getElementById('cfdots'),ci=0,n=cfs.length;
+  cfs.forEach(function(){dots.appendChild(document.createElement('i'))});
+  var dd=[].slice.call(dots.children);
+  function lay(){var w=cfs[0].offsetWidth;cfs.forEach(function(c,i){var o=((i-ci)%n+n)%n;if(o>n/2)o-=n;var a=Math.abs(o);
+    c.style.transform='translate(-50%,-50%) translateX('+(o*w*.62)+'px) translateZ('+(-a*140)+'px) rotateY('+(-o*32)+'deg)';
+    c.style.zIndex=String(10-a);c.style.opacity=a>2?'0':String(1-a*.22);c.style.filter=a?'blur('+(a*1.2)+'px) brightness('+(1-a*.08)+')':'none'});
+    dd.forEach(function(d,i){d.className=i===ci?'on':''})}
+  lay();addEventListener('resize',lay);
+  var cfT=null;function auto(){clearInterval(cfT);if(!reduce)cfT=setInterval(function(){ci=(ci+1)%n;lay()},2600)}auto();
+  var cflow=document.getElementById('cflow'),sx2=null;
+  cflow.addEventListener('touchstart',function(e){sx2=e.touches[0].clientX},{passive:true});
+  cflow.addEventListener('touchend',function(e){if(sx2===null)return;var dx=e.changedTouches[0].clientX-sx2;if(Math.abs(dx)>40){ci=(ci+(dx<0?1:-1)+n)%n;lay();auto()}sx2=null});
+  cfs.forEach(function(c,i){c.addEventListener('click',function(){ci=i;lay();auto()})});
+
+  /* Vidéos : lecture muette quand visibles, plein écran avec son au tap */
+  var cards=[].slice.call(document.querySelectorAll('.vcard'));
+  function load(v){if(!v.getAttribute('src')&&v.dataset.src)v.src=v.dataset.src}
+  if(hasIO){var vio=new IntersectionObserver(function(en){en.forEach(function(x){var v=x.target.querySelector('video');if(x.isIntersecting){load(v);var p=v.play();if(p&&p.catch)p.catch(function(){})}else v.pause()})},{threshold:.5});
+    cards.forEach(function(c){vio.observe(c)});}
+  else cards.forEach(function(c){load(c.querySelector('video'))});
+  var lb=document.getElementById('lb'),lv=document.getElementById('lbv'),cur=0;
+  var srcs=cards.map(function(c){var v=c.querySelector('video');return [v.dataset.src,v.poster]});
+  function open(i){cur=(i+srcs.length)%srcs.length;cards.forEach(function(c){c.querySelector('video').pause()});
+    lv.poster=srcs[cur][1];lv.src=srcs[cur][0];lv.muted=false;lb.hidden=false;document.body.style.overflow='hidden';
+    var p=lv.play();if(p&&p.catch)p.catch(function(){lv.muted=true;lv.play().catch(function(){})})}
+  function close(){lv.pause();lv.removeAttribute('src');lv.load();lb.hidden=true;document.body.style.overflow=''}
+  cards.forEach(function(c,i){c.addEventListener('click',function(){open(i)})});
+  document.getElementById('lbx').onclick=close;
+  document.getElementById('lbn').onclick=function(){open(cur+1)};document.getElementById('lbp').onclick=function(){open(cur-1)};
+  lv.addEventListener('ended',function(){open(cur+1)});
+  lb.addEventListener('click',function(e){if(e.target===lb)close()});
+  addEventListener('keydown',function(e){if(lb.hidden)return;if(e.key==='Escape')close();if(e.key==='ArrowRight')open(cur+1);if(e.key==='ArrowLeft')open(cur-1)});
+  var sx=null;lb.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+  lb.addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>60)open(cur+(dx<0?1:-1));sx=null});
+
+  /* Barre d'achat */
+  var sticky=document.getElementById('sticky'),hero=document.getElementById('top'),fin=document.getElementById('final');
+  function upd(){var h=hero.getBoundingClientRect().bottom<0,fr=fin.getBoundingClientRect(),f=fr.top<innerHeight*.6&&fr.bottom>0;var s=h&&!f;sticky.classList.toggle('show',s);sticky.setAttribute('aria-hidden',s?'false':'true');sticky.querySelector('a').tabIndex=s?0:-1}
+  addEventListener('scroll',upd,{passive:true});upd();
+
+  /* AVIS CLIENTS — les 6 premiers tombent en cartes, les autres défilent en dessous.
+     Pour modifier : {nom:"Prénom N.", texte:"…", note:5} */
+  var AVIS=[{"nom": "Kevin A.", "texte": "Ce e-book m’a vraiment aidé à mieux comprendre le motion design. Les explications sont simples et faciles à suivre.", "note": 5}, {"nom": "Idriss M.", "texte": "Je recommande vivement ! Le contenu est clair et j’aime beaucoup les lives.", "note": 5}, {"nom": "Tony T.", "texte": "Franchement, je ne regrette pas mon achat. Très bon contenu !", "note": 5}, {"nom": "Junior K.", "texte": "Bon coach, bonnes explications. Continue comme ça !", "note": 5}, {"nom": "Stéphane D.", "texte": "Les exemples pratiques m’aident beaucoup à progresser. Merci pour la formation !", "note": 5}, {"nom": "Bryan L.", "texte": "Franchement, c’est carré ! On apprend beaucoup avec toi.", "note": 5}, {"nom": "Arnaud B.", "texte": "J’avais du mal à comprendre certaines techniques, mais maintenant, c’est beaucoup plus clair.", "note": 5}, {"nom": "Fabrice N.", "texte": "Très bon e-book, je recommande à 100 %.", "note": 5}, {"nom": "Mickaël S.", "texte": "Les lives sont vraiment intéressants et permettent de mieux comprendre les notions.", "note": 5}, {"nom": "Samuel P.", "texte": "Formation au top, surtout pour les débutants. J’ai beaucoup appris !", "note": 5}, {"nom": "David H.", "texte": "Simple, clair et efficace. Rien à dire !", "note": 5}, {"nom": "Landry C.", "texte": "Un excellent support pour apprendre le motion design à son rythme.", "note": 5}, {"nom": "Patrick G.", "texte": "Bon travail, le contenu est vraiment de qualité.", "note": 5}, {"nom": "Emmanuel R.", "texte": "J’apprécie surtout la simplicité des explications et les conseils pratiques.", "note": 5}, {"nom": "Wilfried O.", "texte": "Très satisfait de mon achat. Merci pour cet excellent contenu !", "note": 5}, {"nom": "Cédric F.", "texte": "Un coach disponible et des explications au top. Je recommande !", "note": 5}, {"nom": "Rodrigue P.", "texte": "J’ai découvert de nouvelles techniques grâce à ce e-book. Très utile !", "note": 5}, {"nom": "Axel V.", "texte": "Franchement, c’est une bonne formation. On comprend vite et on progresse.", "note": 5}, {"nom": "Hermann Z.", "texte": "Le contenu est bien structuré et facile à comprendre. Bravo !", "note": 5}, {"nom": "Loïc B.", "texte": "Très belle expérience ! J’attends déjà les prochains lives.", "note": 5}];
+  (function(){
+    var sec=document.getElementById('avis'),wall=document.getElementById('wall'),A=document.getElementById('rowA'),B=document.getElementById('rowB'),rowsEl=document.getElementById('rows');
+    function card(r,i,extra){var st='';for(var k=0;k<5;k++)st+='<i style="transition-delay:'+(k*.07)+'s">'+(k<(r.note||5)?'★':'☆')+'</i>';
+      return '<figure class="rc" '+(extra||'')+'><div class="st">'+st+'</div><q>'+r.texte+'</q><hr><b data-i="'+r.nom.charAt(0)+'">'+r.nom+'</b></figure>'}
+    var rot=[-4,3,-2,5,-3,2],off=['0px','26px','-6px','18px','-10px','22px'],F=AVIS.slice(0,6),R=AVIS.slice(6),h='';
+    F.forEach(function(r,i){h+=card(r,i,'style="--r:'+rot[i]+'deg;--y:'+off[i]+';--dl:-'+(i*1.1)+'s"')});wall.innerHTML=h;
+    var half=Math.ceil(R.length/2),ra='',rb='';
+    R.slice(0,half).forEach(function(r){ra+=card(r)});R.slice(half).forEach(function(r){rb+=card(r)});
+    A.innerHTML=ra+ra;B.innerHTML=rb+rb;
+    [].forEach.call(rowsEl.querySelectorAll('.rc'),function(c){c.classList.add('on')});
+    /* effets sonores : le navigateur n'autorise le son qu'après un premier toucher/clic sur la page */
+    var ok=false,SFX={};['pop','sparkle','whoosh-short'].forEach(function(n){var a=new Audio('media/sfx-'+n+'.mp3');a.preload='auto';SFX[n]=a});
+    function unlock(){if(ok)return;ok=true;for(var n in SFX){var a=SFX[n];a.muted=true;var p=a.play();if(p&&p.then)p.then(function(){},function(){});a.pause();a.currentTime=0;a.muted=false}}
+    ['pointerdown','touchstart','keydown'].forEach(function(e){window.addEventListener(e,unlock,{once:true,passive:true})});
+    function sfx(n,v){if(!ok)return;try{var a=SFX[n].cloneNode();a.volume=v||.35;var p=a.play();if(p&&p.catch)p.catch(function(){})}catch(e){}}
+    var cards=[].slice.call(wall.children),done=false,nb=document.getElementById('avisNb'),nt=document.getElementById('avisNote');
+    function play(){if(done)return;done=true;sec.classList.add('go');sfx('whoosh-short',.3);
+      cards.forEach(function(c,i){setTimeout(function(){c.classList.add('on');sfx('pop',.32)},450+i*230)});
+      var t0=performance.now(),N=AVIS.length;(function tick(t){var k=Math.min(1,(t-t0)/1400),e=1-Math.pow(1-k,3);nb.textContent=Math.round(N*e);nt.textContent=(5*e).toFixed(1).replace('.',',');if(k<1)requestAnimationFrame(tick)})(t0);
+      setTimeout(function(){sfx('sparkle',.22)},450+cards.length*230+300);
+      setTimeout(function(){rowsEl.classList.add('go')},700+cards.length*230)}
+    if(document.documentElement.classList.contains('js')&&'IntersectionObserver' in window){
+      new IntersectionObserver(function(en,ob){if(en[0].isIntersecting){play();ob.disconnect()}},{threshold:.2}).observe(wall);
+    } else {sec.classList.add('go');rowsEl.classList.add('go');cards.forEach(function(c){c.classList.add('on')});nb.textContent=AVIS.length;nt.textContent='5,0'}
+  })();
+
+  var cp=document.getElementById('copy');
+  cp.addEventListener('click',function(){function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('num'));var s=getSelection();s.removeAllRanges();s.addRange(r);cp.textContent='Sélectionné'}
+    try{navigator.clipboard.writeText('+22996772599').then(function(){cp.textContent='Copié ✓'},sel)}catch(e){sel()}});
+  var mq=document.getElementById('mq');mq.innerHTML+=mq.innerHTML;
+})();
+</script>
+</body></html>
