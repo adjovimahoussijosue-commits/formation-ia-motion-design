@@ -10,15 +10,29 @@
 <meta name="description" content="Crée des pubs vidéo qui font vendre avec l'IA, sans caméra ni monteur. E-book de 158 pages, 200 prompts, communauté WhatsApp. 6 900 FCFA.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Playfair+Display:ital,wght@1,400;1,700;1,900&family=Instrument+Serif:ital@1&display=swap">
-<!-- Meta Pixel : remplace TON_PIXEL_ID ci-dessous par l'ID de ton Pixel (une seule fois). Tant que ce n'est pas fait, le Pixel reste désactivé. -->
+<!-- Meta Pixel (navigateur) + API Conversions (serveur /api/capi), dédupliqués par event_id -->
 <script>
-var PIXEL_ID='TON_PIXEL_ID';
-if(/^\d{6,}$/.test(PIXEL_ID)){
+var PIXEL_ID='1129381852922164';
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init',PIXEL_ID);fbq('track','PageView');fbq('track','ViewContent',{content_name:'Formation IA Motion Design',value:6900,currency:'XOF'});
-document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-pay]');if(a)fbq('track','InitiateCheckout',{content_name:'Formation IA Motion Design',value:6900,currency:'XOF'})});
-}
+fbq('init',PIXEL_ID);
+(function(){
+  var DATA={content_name:'Formation IA Motion Design',value:6900,currency:'XOF'};
+  function ck(n){var m=document.cookie.match('(?:^|; )'+n+'=([^;]*)');return m?decodeURIComponent(m[1]):''}
+  function fbc(){var c=ck('_fbc');if(c)return c;var m=location.search.match(/[?&]fbclid=([^&]+)/);return m?'fb.1.'+Date.now()+'.'+m[1]:''}
+  function track(name,withData){
+    var id=name+'.'+Date.now()+'.'+Math.random().toString(36).slice(2,10);
+    fbq('track',name,withData?DATA:{},{eventID:id});
+    var body=JSON.stringify({event_name:name,event_id:id,url:location.href,fbp:ck('_fbp'),fbc:fbc()});
+    setTimeout(function(){
+      try{if(navigator.sendBeacon&&navigator.sendBeacon('/api/capi',new Blob([body],{type:'application/json'})))return}catch(e){}
+      try{fetch('/api/capi',{method:'POST',headers:{'Content-Type':'application/json'},body:body,keepalive:true})}catch(e){}
+    },name==='InitiateCheckout'?0:800);
+  }
+  track('PageView');track('ViewContent',true);
+  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-pay]');if(a)track('InitiateCheckout',true)});
+})();
 </script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1129381852922164&ev=PageView&noscript=1"/></noscript>
 <style>
 /* Layout : page de vente mobile-first sur papier à grille. Sections posées comme des feuilles arrondies qui se chevauchent (délimitation nette), accents violet / noir / rouge du style motion design. Look unique assumé. */
 :root{
