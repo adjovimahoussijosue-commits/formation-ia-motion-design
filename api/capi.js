@@ -24,7 +24,7 @@ module.exports = async (req, res) => {
     action_source: 'website',
     event_source_url: String(b.url || req.headers.referer || '').slice(0, 1000),
     user_data,
-    custom_data: { content_name: 'Formation IA Motion Design', value: 6900, currency: 'XOF' }
+    custom_data: { content_name: 'Formation IA Motion Design', content_ids: ['formation-ia-motion-design'], content_type: 'product', value: 6900, currency: 'XOF' }
   };
   const payload = { data: [ev] };
   if (process.env.META_TEST_CODE) payload.test_event_code = process.env.META_TEST_CODE;
